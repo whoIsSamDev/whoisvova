@@ -1,0 +1,217 @@
+/* псевдокласс для переменных */
+:root {
+    --color1: rgb(208, 208, 62);
+    --color2: rgb(91, 152, 212);
+}
+
+header, section {
+    padding: 100px 0;
+}
+
+header {
+    padding: 200px 0;
+}
+
+header, footer {
+    background: url(../img/pattern.png), rgb(137, 136, 157);
+    background: url(../img/pattern.png), linear-gradient(90deg, rgba(137, 136, 157, 1) 0%, rgba(119, 167, 214, 1) 42%, rgba(208, 208, 62, 1) 100%);
+    background-size: contain;
+    /* масштаб паттерна уменьшить */
+}
+
+.play_btn {
+    background-color: var(--color1);
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 30px auto;
+    transition: all 0.2s ease;
+}
+
+.play_btn:hover {
+    background-color: var(--color2);
+    transform: scale(1.4);
+}
+
+.play_triangle {
+    margin-right: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent var(--bs-white);
+}
+
+.btn-btn {
+    display: block;
+    margin: 0 auto;
+    width: 220px;
+    height: 70px;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 20px 0 0 3px;
+    background: var(--color2);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+
+}
+
+.btn-btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    animation: glowing 10s linear infinite;
+    opacity: 0;
+    transition: opacity .1s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn-btn:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+
+.btn-btn:active {
+    color: #fff;
+}
+
+.btn-btn:active:after {
+    background: transparent;
+}
+
+.btn-btn:hover:before {
+    opacity: 1;
+}
+
+.btn-btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--color2);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Цвет текста */
+.color1 {
+    color: var(--color1);
+}
+
+.color2 {
+    color: var(--color2);
+}
+
+/* About */
+.about, .params {
+    background-color: #eee;
+}
+
+/* цвет всех иконок */
+.about i {
+    font-size: 25px;
+    color: var(--color2);
+}
+
+.my_circle {
+    margin: 0 auto 15px;
+    width: 70px;
+    height: 70px;
+    border: 3px solid var(--color2);
+    background-color: var(--color1);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    width: 100px;
+    height: 3px;
+    background-color: var(--color1);
+    margin: 15px auto 30px;
+}
+
+/* Facts */
+.facts h5 {
+    min-height: 270px;
+    padding: 160px;
+    border: 3px solid var(--color2);
+}
+
+
+/* Params */
+
+.accordion-button:not(.collapsed) {
+    color: var(--bs-white);
+    background-color: var(--color2);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem var(--color2);
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+footer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(137, 136, 157, 1) 0%, rgba(119, 167, 214, 1) 42%, rgba(208, 208, 62, 1) 100%);
+}
+
+.ass-text {
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 50px;
+}
